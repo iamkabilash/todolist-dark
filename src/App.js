@@ -77,7 +77,7 @@ const App = () => {
             <a href="./index.html"><h3 className="font-bold text-[25px] w-[200px] text-white">TodoList App ✅</h3></a>
         </div>
         <div className="flex flex-row items-center gap-[20px]">
-            <h3 className="font-bold text-[25px] text-white">Username</h3>
+            <h3 className="font-bold text-[25px] text-white">Empyra</h3>
             <div className='w-[40px] h-[40px] rounded-full bg-gradient-to-t from-violet-500 to-fuchsia-500'></div>
         </div>
       </nav>
