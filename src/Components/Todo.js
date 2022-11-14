@@ -1,18 +1,31 @@
 const Todo = ({ item, onDone, onDelete }) => {
 
     const todoClass = (item) =>{
-        const classes = "h-[100px] rounded-xl flex flex-row items-center justify-between px-[20px] ";
+        const classes = "card h-[120px] rounded-xl flex flex-row pt-[10px] justify-between px-[20px] transition-transform hover:scale-110 ";
         if(item.completed === true){
-            return classes + "bg-green-200"
+            return classes + "bg-gradient-to-r from-[#f8a9b6] to-[#fdd6bd]"
         } else{
-            return classes + "bg-red-200"
+            return classes + "bg-gradient-to-r from-[#a4f5f1] to-[#57d9d2]"
+        }
+    }
+    const strikeClass = (item) =>{
+        const classes = "w-[90%] mt-[10px] font-semibold "
+        if(item.completed === true){
+            return classes + "line-through";
+        } else{
+            return classes;
         }
     }
 
     return(
         <div key={item.id} className={todoClass(item)}>
-            <p className='w-[70%] font-semibold'>{item.title}</p>
-            <div className='flex flex-row gap-[15px]'>
+            <div className="flex flex-col">
+                <div className="bg-gray-200 w-[70px] px-[5px] rounded-lg">
+                    <p>User {item.userId}</p>
+                </div>
+                <p className={strikeClass(item)}>{item.title}</p>
+            </div>
+            <div className='flex flex-row gap-[15px] h-[120px] items-center mt-[-10px]'>
                 <div id="done" onClick={() => onDone(item)} className='cursor-pointer hover:scale-125 hover:text-green-800'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[30px] h-[30px]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
