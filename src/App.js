@@ -41,7 +41,7 @@ const App = () => {
   }
 
   const onDelete = (item) => {
-    item.completed ? setOpenTodo(openTodo-1) : setClosedTodo(closedTodo-1);
+    item.completed ? setClosedTodo(closedTodo-1) : setOpenTodo(openTodo-1);
     const updatedList = response.filter((check) => {
       if(item.id === check.id){
         return false;
@@ -72,8 +72,8 @@ const App = () => {
 
   return (
     <main>
-      <nav className="flex flex-row items-center justify-between mx-[100px] mt-[25px]">
-        <div className="logo hidden xl:flex">                
+      <nav className="flex flex-row items-center justify-between mx-[50px] lg:mx-[100px] mt-[25px]">
+        <div className="">                
             <a href="./index.html"><h3 className="font-bold text-[25px] w-[200px] text-white">TodoList App ✅</h3></a>
         </div>
         <div className="flex flex-row items-center gap-[20px]">
