@@ -5,11 +5,13 @@ import Todo from './Components/Todo';
 
 const App = () => {
   const [response, setResponse] = useState([]);
-  const [user, setUser] = useState("1")
+  const [user, setUser] = useState("1");
+  const [userList, setUserList] = useState([]);
 
   const getData = async() => {
     const resp = await axios.get("https://jsonplaceholder.typicode.com/todos");
     setResponse(resp.data);
+    setUserList([...new Set(resp.data.map(item => item.userId))])
   }
 
   useEffect(() => {
@@ -38,6 +40,13 @@ const App = () => {
     setResponse(updatedList);
   }
 
+  const selectUser = (e) =>{
+    let currentUser = e.target.value;
+    setUser(currentUser);
+
+  }
+
+
   return (
     <main>
       <nav className="flex flex-row items-center justify-between mx-[100px] mt-[25px]">
@@ -45,13 +54,24 @@ const App = () => {
             <a href="./index.html"><h3 className="font-bold text-[25px] w-[200px]">TodoList App</h3></a>
         </div>
         <div className="flex flex-row items-center gap-[40px]">
-            <h3 className="font-bold text-[25px]">Username</h3>
+            <h3 className="font-bold text-[25px]">User</h3>
+            <select onChange={selectUser} className="font-bold text-[15px]">
+                {userList.map((item) => (<option key={item} value={item}>{item}</option>))}
+            </select>
             <div className='w-[40px] h-[40px] rounded-full bg-red-300'></div>
         </div>
       </nav>
       {/* stats and add todo */}
       <div className='mx-[100px] mt-[30px] flex flex-row gap-[50px] items-center justify-between'>
-        <div className='w-[70vw] h-[150px] bg-green-100 rounded-3xl'></div>
+        <div className='flex flex-col w-[70vw] h-[150px] bg-green-100 rounded-3xl px-[50px]'>
+          <div className='mt-[25px]'>
+            <h2 className='text-xl font-bold'>Add a new Todo to User {user}</h2>
+          </div>
+          <div className='flex flex-row mt-[25px] justify-between'>
+            <input type="text" placeholder='Enter a Todo' className='w-[400px] px-[10px] rounded-lg' />
+            <button className='bg-green-400 hover:bg-green-500 text-lg font-semibold px-[30px] py-[6px] rounded-xl'>Add</button>
+          </div>
+        </div>
         <div className='w-[25vw] h-[150px] bg-green-100 rounded-3xl'></div>
         <div className='w-[25vw] h-[150px] bg-green-100 rounded-3xl'></div>
       </div>
