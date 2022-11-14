@@ -82,8 +82,8 @@ const App = () => {
         </div>
       </nav>
       {/* stats and add todo */}
-      <div className='mx-[100px] mt-[30px] flex flex-row gap-[50px] items-center justify-between'>
-        <div className='flex flex-col w-[70vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl px-[50px]'>
+      <div className='mx-[100px] mt-[30px] flex flex-col xl:flex-row gap-[50px] items-center justify-center xl:justify-between'>
+        <div className='flex flex-col w-[80vw] xl:w-[65vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl px-[50px]'>
           <div className='mt-[25px] flex flex-row items-center gap-[10px]'>
             <h2 className='text-xl font-bold'>Add a new Todo to User</h2>
             <select onChange={selectUser} className="font-bold text-[15px] rounded-lg w-[40px] h-[25px]">
@@ -95,17 +95,19 @@ const App = () => {
             <button onClick={addTodo} className='bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-lg font-semibold px-[30px] py-[6px] rounded-xl'>Add</button>
           </div>
         </div>
-        <div className='w-[25vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl p-[20px]'>
-          <h3 className='text-xl font-semibold'>Open tasks</h3>
-          <h2 className='mt-[15px] text-4xl font-bold'>{openTodo} / {totalTodo}</h2>
-        </div>
-        <div className='w-[25vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl p-[20px]'>
-          <h3 className='text-xl font-semibold'>Completed</h3>
-          <h2 className='mt-[15px] text-4xl font-bold'>{closedTodo} / {totalTodo}</h2>
+        <div className='ml-[20vw] xl:ml-[0px] flex flex-row gap-[50px] w-screen xl:w-[35vw]'>
+          <div className='w-[35vw] xl:w-[25vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl p-[20px]'>
+            <h3 className='text-xl font-semibold'>Open tasks</h3>
+            <h2 className='mt-[15px] text-4xl font-bold'>{openTodo} / {totalTodo}</h2>
+          </div>
+          <div className='w-[35vw] xl:w-[25vw] h-[150px] bg-gradient-to-r from-purple-300 to-pink-300 rounded-3xl p-[20px]'>
+            <h3 className='text-xl font-semibold'>Completed</h3>
+            <h2 className='mt-[15px] text-4xl font-bold'>{closedTodo} / {totalTodo}</h2>
+          </div>
         </div>
       </div>
       {/* displaying todo */}
-      <div className='grid grid-cols-3 gap-[40px] mx-[100px] mt-[30px] mb-[100px] items-center justify-between'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[40px] mx-[100px] mt-[30px] mb-[100px] items-center justify-between'>
         {response.map((item) => (
           <Todo key={item.id} item={item} onDone={onDone} onDelete={onDelete} />
         ))}
