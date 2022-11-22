@@ -1,3 +1,27 @@
+# TodoList from API
+
+[![Last commit](https://img.shields.io/github/last-commit/iamkabilash/todolist-dark?style=flat-square)](#)
+[![GitHub repo size](https://img.shields.io/github/repo-size/iamkabilash/todolist-dark?style=flat-square)](#)
+[![Stars](https://img.shields.io/github/stars/iamkabilash/todolist-dark?style=social)](#)
+
+# Running the Project
+[![Live link](https://img.shields.io/badge/Live%20link-Click%20here-blue?style=for-the-badge&logo=appveyor)](https://todolist-empyra-iamkabilash.vercel.app/)
+
+# Tech used
+[![Project](https://img.shields.io/badge/HTML-red?style=for-the-badge&logo=appveyor)](#)
+[![Project](https://img.shields.io/badge/TailwindCSS-blue?style=for-the-badge&logo=appveyor)](#)
+[![Project](https://img.shields.io/badge/Javascript-yellow?style=for-the-badge&logo=appveyor)](#)
+[![Project](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=appveyor)](#)
+
+# API used
+[JSONplaceholder](https://jsonplaceholder.typicode.com/todos)
+
+
+# Screenshots
+![](./src/assets/thumbnail.png)
+
+<hr>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
